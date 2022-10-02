@@ -1,7 +1,30 @@
 {
   "sections": {
     "image_banner": {
-      "type": "my-image-banner"
+      "type": "my-image-banner",
+      "blocks": {
+        "1354c35a-a5fc-4de3-8948-5c6784845e9b": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify:\/\/shop_images\/EVG_HeroBanners_Homepage_Desktop_v3_Finance_02.jpg",
+            "slide_title": ""
+          }
+        },
+        "ead2f9ee-7620-4620-b7af-6eaca8434834": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify:\/\/shop_images\/EVG_HeroBanners_Homepage_Desktop_v3_02.jpg",
+            "slide_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "1354c35a-a5fc-4de3-8948-5c6784845e9b",
+        "ead2f9ee-7620-4620-b7af-6eaca8434834"
+      ],
+      "settings": {
+        "title": ""
+      }
     },
     "collage": {
       "type": "collage",
