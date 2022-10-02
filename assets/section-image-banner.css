@@ -436,3 +436,7 @@
 .banner__box > * + .banner__buttons {
   margin-top: 2rem;
 }
+
+.slider-image img {
+  max-width: 100%;
+}
