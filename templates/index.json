@@ -26,8 +26,8 @@
         "title": ""
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
+    "mymulticolumn": {
+      "type": "mymulticolumn",
       "blocks": {
         "column1": {
           "type": "column",
@@ -65,7 +65,7 @@
       "settings": {
         "title": "",
         "heading_size": "h1",
-        "image_width": "third",
+        "image_width": "full",
         "image_ratio": "adapt",
         "columns_desktop": 3,
         "column_alignment": "center",
@@ -179,7 +179,7 @@
   },
   "order": [
     "image_banner",
-    "multicolumn",
+    "mymulticolumn",
     "featured_collection",
     "collage",
     "rich_text"
