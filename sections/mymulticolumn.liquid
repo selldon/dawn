@@ -63,12 +63,13 @@
                 {% endif %}
                 <div class="mymulticolumn-card__image-wrapper mymulticolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} mymulticolumn-card-spacing{% endif %}">
                   {%- if block.settings.link != blank -%}
-                    <a class="link animate-arrow" href="{{ block.settings.link }}">
+                    <a href="{{ block.settings.link }}">
                   {%- endif -%}
                   <div class="media media--transparent media--{{ section.settings.image_ratio }}"
                     {% if section.settings.image_ratio == 'adapt' %}
                       style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
                     {% endif %}>
+                
                     <img
                       class="mymulticolumn-card__image"
                       srcset="{%- if block.settings.image.width >= 275 -%}{{ block.settings.image | image_url: width: 275 }} 275w,{%- endif -%}
@@ -85,6 +86,7 @@
                       width="{{ block.settings.image.width }}"
                       loading="lazy"
                     >
+                      
                   </div>
                   {%- if block.settings.link != blank -%}
                   </a>
