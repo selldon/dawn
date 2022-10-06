@@ -1,61 +1,37 @@
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{{ 'slick.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'jquery-3.6.0.min.js' | asset_url | script_tag }} {% endcomment %}
+{% comment %} {{ 'slick.min.js' | asset_url | script_tag }} {% endcomment %}
+<script src="{{ 'jquery-3.6.0.min.js' | asset_url }}" defer></script>
+<script src="{{ 'slick.min.js' | asset_url }}" defer></script>
+{% comment %} <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> {% endcomment %}
+{% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> {% endcomment %}
+{% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> {% endcomment %}
 <div class="slider-container">
-    <div class="image-container Pre_slide">
+    <div class="image-container Pre_slide" style="width: 100%">
         {% for block in section.blocks %}
-            <div class="image-title">
-                {{ block.settings.slide_title }}
-            </div>
-
-            <div class="slider-image">
+            <div class="slider-image" >
                 <img loading="lazy" src="{{ block.settings.slide_image | image_url }}">
             </div>
 
         {% endfor %}
     </div>
-
     <div class="slider-next">Next</div>
     <div class="slider-prev">Prev</div>
 </div>
 
 <script>
+  window.onload = function () {
     $('.Pre_slide').slick({
       dots: false,
       infinite: true,
       speed: 300,
-      slidesToShow: 2,
+      slidesToShow: 1,
       slidesToScroll: 1,
       nextArrow:$('.slider-next'),
-      prevArrow:$('.slider-prev'),
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: false
-  
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
+      prevArrow:$('.slider-prev')
     });
+  }
   </script>
 
 {% schema %}
